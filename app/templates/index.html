@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{%block title%}TITLE!!!!{%endblock%}
+
+
+{%block content%}
+
+<ul>
+{%for tovar in data%}
+    <li>{{tovar[1]}}</li>
+{%endfor%}
+</ul>
+
+
+{%endblock  %}

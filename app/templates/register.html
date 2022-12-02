@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+    <form method="post">
+
+        {{form.hidden_tag()}}
+
+        <div class="form-group">
+            <span>Логин</span>
+            {{form.login(class="form-control")}}
+
+            <ul>
+                {% for error in form.login.errors %}
+                    <li>{{error.value}}</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+        <div class="form-group">
+            <span>Пароль</span>
+            {{form.password(class="form-control")}}
+
+            <ul>
+                {% for error in form.password.errors %}
+                    <li>{{error.value}}</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+        <div>
+            {{msg}}
+        </div>
+
+        <input type="submit" value="Зарегистр"/>
+    </form>
+
+{% endblock content %}
+
+
